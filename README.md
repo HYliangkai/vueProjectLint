@@ -7,3 +7,4 @@
 * eslint-plugin-chzky(0.0.2) :自定义规则
 * @typescript-eslint/parser(^5.57.0) :用于解析SFC文件中的 script内容成 AST
 * @typescript-eslint/eslint-plugin(^5.57.0) :typescript相关的规则  
+## Prettier规则依赖
