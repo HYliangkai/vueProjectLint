@@ -1,3 +1,4 @@
+# 适用于Vue2的代码规范
 ## 依赖
 * eslint 
 * prettier
