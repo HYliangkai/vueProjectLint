@@ -17,6 +17,7 @@ plugins:
   - 'vue'
   - '@typescript-eslint'
   - 'chzky'
+  - 'check-file'
 settings: {}
 extends: []
 rules:
@@ -45,32 +46,52 @@ rules:
     - selector:
         - 'variable'
       format:
-        - 'UPPER_CASE'
         - 'snake_case'
+        - 'UPPER_CASE'
       trailingUnderscore: 'allowSingleOrDouble'
+
+  'check-file/filename-naming-convention':
+    - 2
+    - 'src/**/*.{js,ts}': 'CAMEL_CASE' # 文件名必须驼峰命名
+
+  'check-file/folder-naming-convention':
+    - 2
+    - 'src/**/': 'CAMEL_CASE' # 文件夹必须驼峰命名
+
   'chzky/vue-prop-name-check': 1 # prop数据应该使用大驼峰命名
+
   'chzky/vue-method-name-check': 1 # method方法应该使用蛇形命名
+
   'chzky/vue-computed-name-check': 1 # 计算属性前面加上`comp_`作为前缀
+
   'vue/component-name-in-template-casing': # 自定义组件使用大驼峰命名
     - 2
     - 'PascalCase'
+
   'vue/attribute-hyphenation': # 类名和属性使用单串式命名
     - 2
     - 'always'
+
   'vue/no-async-in-computed-properties': 2 # 不允许异步的计算属性
+
   'vue/no-side-effects-in-computed-properties': 2 # 不允许计算属性改变外部值,要想改只能复制到内部修改
+
   'vue/v-bind-style': # 不能使用[v-bind]代替[:]
     - 2
     - 'shorthand'
+
   'vue/v-on-style': # 不能使用[v-on]代替[@]
     - 'error'
     - 'shorthand'
+
   'vue/this-in-template': # template不能使用this
     - 2
     - 'never'
+
   'vue/no-use-v-if-with-v-for': # 禁止同时出现v-for和v-if
     - 2
     - allowUsingIterationVar: false
+
   'vue/html-self-closing': # 消除单闭合标签警告问题
     - 2
     - html:
@@ -79,6 +100,7 @@ rules:
         component: 'always' # 组件如果里面没有内容必须自闭合
       svg: 'always'
       math: 'always'
+
   'vue/order-in-components': # 如果使用option-api script区域的位置顺序
     - 2
     - order:
@@ -121,10 +143,11 @@ rules:
         - - 'template'
           - 'render'
         - 'renderError'
+
   'vue/attributes-order': # template元素属性的排列顺序
     - 2
     - order:
-        - 'CONDITIONALS' # render : such as v-if
+        - 'CONDITIONALS'
         - - 'SLOT'
           - 'DEFINITION'
           - 'LIST_RENDERING'
@@ -132,10 +155,9 @@ rules:
           - 'TWO_WAY_BINDING'
           - 'RENDER_MODIFIERS'
           - 'OTHER_DIRECTIVES'
-        - - 'GLOBAL' # props
+        - - 'GLOBAL'
           - 'ATTR_STATIC'
           - 'UNIQUE'
-        - 'ATTR_SHORTHAND_BOOL' # once-prop
-        - 'ATTR_DYNAMIC' # v-bind
-        - 'EVENTS' # @-any
-    alphabetical: false
+        - 'ATTR_SHORTHAND_BOOL'
+        - 'ATTR_DYNAMIC'
+        - 'EVENTS'

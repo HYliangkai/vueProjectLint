@@ -1,0 +1,19 @@
+{
+  "name": "vue-project-lint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "eslint-plugin-check-file": "^2.6.2",
+    "eslint-plugin-chzky": "^0.0.2",
+    "eslint-plugin-vue": "^9.18.1",
+    "vue-eslint-parser": "^9.3.2"
+  }
+}

@@ -1,6 +1,6 @@
 # // tips:  用 /* prettier-ignore */ 进行注释, 下行代码将不会进行格式化
 # 单行长度
-printWidth: 100
+printWidth: 120
 # 缩进长度
 tabWidth: 2
 # 使用空格代替tab缩进
