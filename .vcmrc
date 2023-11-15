@@ -1,0 +1,17 @@
+{
+  "types": "*",
+  "scope": {
+    "required": false,
+    "allowed": [
+      "*"
+    ],
+    "validate": false,
+    "multiple": false
+  },
+  "warnOnFail": false,
+  "maxSubjectLength": 100,
+  "subjectPattern": ".+",
+  "subjectPatternErrorMsg": "--noPattern",
+  "helpMessage": "详情规范 : Angular Git Commit Guidelines",
+  "autoFix": false
+}

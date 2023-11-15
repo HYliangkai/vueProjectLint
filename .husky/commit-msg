@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+
+TIPS_MEG="代码提交不规范,参见 : Angular Git Commit Guidelines"
+INPUT_FILE=$1
+INPUT_CONTENT=$(cat $INPUT_FILE)
+
+# 阻止指令输出内容
+npx validate-commit-msg "$INPUT_CONTENT" > /dev/null 2>&1 || echo $TIPS_MEG 
