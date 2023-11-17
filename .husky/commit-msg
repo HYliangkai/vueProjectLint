@@ -2,9 +2,13 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 
-TIPS_MEG="代码提交不规范,参见 : Angular Git Commit Guidelines"
-INPUT_FILE=$1
-INPUT_CONTENT=$(cat $INPUT_FILE)
+TIPS_MSG="commit编写不规范，规范参见: Angular Git Commit Guidelines"
+INPUT_FILE="$1"
 
 # 阻止指令输出内容
-npx validate-commit-msg "$INPUT_CONTENT" > /dev/null 2>&1 || echo $TIPS_MEG 
+if npx validate-commit-msg "$(cat "$INPUT_FILE")" > /dev/null 2>&1; then
+  exit 0
+else 
+  echo "$TIPS_MSG"
+  exit 1
+fi
